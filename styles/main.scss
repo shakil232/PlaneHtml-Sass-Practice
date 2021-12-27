@@ -1,0 +1,149 @@
+
+// All-Imports
+@import "reset";
+@import "colors";
+@import "mixin";
+@import "extend";
+
+
+
+//sass-nesting
+nav{
+    margin: 15px 0px;
+    padding: 10px;
+    
+    ul{
+        display: inline-block;
+        list-style-type: none;
+
+        li{
+            display: inline-block;
+            margin: 0px 15px;
+
+            a{
+                text-decoration: none;
+                padding: 5px 10px;
+                color: rgb(19, 52, 163);
+                cursor: pointer;
+                transition: 1s ease-in;
+                font-weight: 500;
+                border-radius: 8px;
+            }
+
+            a:hover{
+                color: white;
+                background-color: rgb(32, 18, 18)
+            }
+        } 
+    }
+}
+ 
+
+// Mixin
+.mixin{
+    @include details-Sections;
+    background-color: $LightInfo-color;
+
+    h3{
+        color:$warning-color;
+    }
+
+    p{
+        padding: 5px 30px;
+        margin-top: 10px;
+        color: white;
+        text-align: justify;
+    }
+
+}
+.mixin-verbile{
+    @include verbile-Sections(21px, end, 15px) ;
+    background-color: $LightInfo-color;
+
+    h3{
+        color:$warning-color;
+    }
+
+    p{
+        padding: 5px 30px;
+        margin-top: 10px;
+        color: white;
+        text-align: justify;
+    }
+
+}
+
+// SASS-EXTEND
+#all-btn{
+    margin: 10px;
+    padding: 10px;
+    // NESTING
+    .connect-btn{
+        @extend .btn;
+        border: 1px solid gold;
+        background-color: rgb(155, 133, 12);
+        color: white;
+
+        &:hover{
+            background-color: gold;
+            color: black;
+        }
+    }
+
+    .resume-btn{
+        @extend .btn;
+        background: transparent;
+        border: 1px solid gold;
+        color: white;
+        
+        &:hover{
+            background-color: gold;
+            color: black;
+        }
+    }
+}
+
+// plane-css
+body{
+    background-color: rgba(211, 193, 193, 0.959);
+}
+header{
+    text-align: center;
+    margin: 15px 0px;
+    background-color: $LightOrkid-color;
+    color:white;
+    padding: 10px;
+    // conditions-apply
+    @include fontSize(medium);
+}
+
+main{
+    text-align: center;
+    margin: 15px 0px;
+    background-color: $green-color;
+    padding: 10px;
+
+    h3{
+        color:$yellow-color;
+    }
+
+    p{
+        padding: 5px 30px;
+        margin-top: 10px;
+        color: white;
+        text-align: justify;
+    }
+
+}
+footer {
+    text-align: center;
+    background-color:$lightGreen-color;
+    margin-bottom: 30px;
+    padding: 7px;
+    
+    small{
+        color:white;
+        font-size: 15px;
+    }
+    
+}

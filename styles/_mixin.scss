@@ -1,0 +1,31 @@
+
+@mixin details-Sections {
+    margin: 40px 0;
+    text-align: start;
+    padding: 30px;
+    font-size: 17px;
+}
+
+// with-verbile
+@mixin verbile-Sections ($size , $position , $padding) {
+    margin: 40px 0;
+    text-align: $position;
+    padding: $padding;
+    font-size: $size ;
+}
+
+// with-conditions-apply
+@mixin fontSize($value) {
+    @if $value == small{
+        font-size: 15px;
+    }
+    @else if $value == medium{
+        font-size: 18px;
+    }
+    @else if $value == large{
+        font-size: 22px;
+    }
+    @else{
+        font-size: none;
+    }
+}
